@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example {
+            height: 220px;
+        }
+
+        .centerlook {
+            padding-left: 400px;
+            font-weight: bold;
+            width: 1000px;
+        }
+
+        .error {
+            padding-left: 400px;
+            font-weight: bold;
+            width: 1000px;
+            color: red;
+        }
+
+        .field-validation-error {
+            color: Red;
+        }
+
+        .loginbtn {
+            padding-left: 500px;
+        }
+
+        .form-control {
+        }
+    </style>
+
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div class="bs-example">
+
+            <div class="form-group centerlook">
+                <h1> Login </h1>
+            </div>
+
+            <div class="form-group centerlook">
+                <label>Token</label>
+                @Html.Editor("token")
+            </div>
+            <div class="loginbtn">
+
+                <input type="submit" value="Verify" class="btn btn-info" />
+
+            </div>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿@model M183.Models.CBUserModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type="text/css">
+    .bs-example {
+        height: 220px;
+    }
+
+    .centerlook {
+        padding-left: 400px;
+        font-weight: bold;
+        width: 1000px;
+    }
+
+    .error {
+        font-weight: bold;
+        width: 1000px;
+        color: red;
+    }
+
+    .field-validation-error {
+        color: Red;
+    }
+
+    .loginbtn {
+        padding-left: 500px;
+    }
+
+    .form-control {
+    }
+</style>
+<h2>Index</h2>
+
+<div class="row">
+    <div class=”col-lg-8 col-lg-offset-2" style="margin-top:60px;">
+        <form class="well" action="~/Logging/DoLogin" method="post">
+            <label style="color:#333;">Username</label>
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UserName)
+            <br />
+            <label style="color:#333;">Password</label>
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Password)
+            <br />
+            <p style="color:red">@ViewBag.Message</p>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
